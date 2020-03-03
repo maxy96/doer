@@ -1,0 +1,138 @@
+.card-register{
+  max-width: 40rem;
+}
+
+.container form{
+  margin-top: 15px;
+}
+.container form input{
+  border:none;
+  width: 90%;
+  background-color: transparent;
+  margin: 16px 0px;
+  padding-left: 5px;
+  position: relative;
+  color: #f4770e;
+}
+
+.container form input[type="text"],
+.container form input[type="email"],
+.container form input[type="password"]{
+  outline: none;
+  border-bottom: 2px solid #f4770ea8;
+}
+
+.container form input[type="text"]:focus, 
+.container form input[type="text"]:active,
+.container form input[type="email"]:focus,
+.container form input[type="email"]:active,
+.container form input[type="password"]:focus,
+.container form input[type="password"]:active {
+          outline: none;
+          border-bottom: 2px solid #f4770e; 
+}
+
+.container form input[type="text"].error,
+.container form input[type="email"].error,
+.container form input[type="password"].error {
+          border-bottom: 2px solid #ff0000; 
+}
+
+.container form input[type="text"].error + label,
+.container form input[type="email"].error + label,
+.container form input[type="password"].error + label {
+  color: #ff0000; 
+}
+
+.container form label {
+        color: #f4770e; 
+}
+
+.container form label.label {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+   font-size: 16px;
+  line-height: 16px;
+  position: absolute;
+  top: 16px;
+  left: 0; 
+}
+
+.container form label.label.active {
+  top: -12px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #ffbf00; 
+}
+
+.container form .checkbox label, 
+.container form .radio label {
+  display: inline-block;
+  cursor: pointer;
+  color: #f4770e;
+  position: relative;
+  padding: 5px 15px 5px 51px;
+  font-size: 1em;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+}
+
+.container form .checkbox label:hover, 
+.container form .radio label:hover {
+  background: #ffeb3b61; 
+}
+
+.container form .checkbox label:before, 
+.container form .radio label:before {
+   content: "";
+   display: inline-block;
+   width: 17px;
+   height: 17px;
+   position: absolute;
+   left: 15px;
+   border-radius: 50%;
+   background: none;
+   border: 2px solid #f4770e; 
+  }
+
+.container form .error label {
+  color: #D32F2F; 
+}
+.container form .error label:hover {
+  background: rgba(211, 47, 47, 0.2); 
+}
+.container form .error label:before {
+  border: 2px solid #D32F2F; 
+}
+
+.container form .radio input[type="radio"] {
+  display: none; 
+}
+.container form .radio input[type="radio"]:checked + label:before {
+  display: none; 
+}
+.container form .radio input[type="radio"]:checked + label {
+  padding: 5px 15px;
+  background: #f4770e;
+  border-radius: 2px;
+  color: #f1f1f1; 
+}
+
+.container form .checkbox label:before {
+  border-radius: 3px; 
+}
+.container form .checkbox input[type="checkbox"] {
+  display: none; 
+}
+.container form .checkbox input[type="checkbox"]:checked + label:before {
+  display: none; 
+}
+.container form .checkbox input[type="checkbox"]:checked + label {
+  background: #f4770e;
+  color: #f1f1f1;
+  padding: 5px 15px; 
+}
