@@ -13,10 +13,15 @@ class CreateServiciosTable extends Migration
      */
     public function up()
     {
+        Schema::create('tipos_servicios', function (Blueprint $table) {
+            $table->increments('id_tipoServicio');
+            $table->string('descripcion', 30);
+        });
+
         Schema::create('servicios', function (Blueprint $table) {
             $table->bigIncrements('id_servicio');
-            $table->string('descripcion');
-            $table->dateTime('created_at');
+            $table->mediumText('descripcion');
+            $table->dateTime('creado_en');
         });
     }
 
@@ -28,5 +33,6 @@ class CreateServiciosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('servicios');
+        Schema::dropIfExists('tipos_servicios');
     }
 }

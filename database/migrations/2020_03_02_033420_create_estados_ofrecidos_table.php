@@ -14,8 +14,8 @@ class CreateEstadosOfrecidosTable extends Migration
     public function up()
     {
         Schema::create('estados_ofrecidos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('id_estadoOfrecido');
+            $table->string('descripcion');
         });
     }
 

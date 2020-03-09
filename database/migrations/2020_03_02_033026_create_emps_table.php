@@ -15,8 +15,8 @@ class CreateEmpsTable extends Migration
     {
         Schema::create('emps', function (Blueprint $table) {
             $table->bigIncrements('id_emp');
-            $table->string('nombre');
-            
+            $table->string('nombre', 25);
+            $table->mediumText('descripcion');
         });
     }
 

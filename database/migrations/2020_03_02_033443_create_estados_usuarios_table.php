@@ -15,7 +15,7 @@ class CreateEstadosUsuariosTable extends Migration
     {
         Schema::create('estados_usuarios', function (Blueprint $table) {
             $table->increments('id_estadoUsuario');
-            $table->string('descripcion');
+            $table->string('descripcion', 20);
         });
     }
 

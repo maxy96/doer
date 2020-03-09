@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ofrecidos extends Model
+class Estados_ofrecidos extends Model
 {
     //
 }

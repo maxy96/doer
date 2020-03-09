@@ -31,9 +31,12 @@ class CreateAddForeignKeysTable extends Migration
         });
 
         //TABLA DE SERVICIOS
+        // LA CREACION DE LA TABLA tipos_servicios SE ENCUENTRA EN LA MIGRACION DE SERVICIOS
         Schema::table('servicios', function (Blueprint $table) {
             $table->unsignedBigInteger('emp_id');
             $table->foreign('emp_id')->references('id_emp')->on('emps')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('tipoServicio_id')->unsigned();
+            $table->foreign('tipoServicio_id')->references('id_tipoServicio')->on('tipos_servicios')->onDelete('cascade')->onUpdate('cascade');
         });
 
         //TABLA DE CLIENTES
@@ -42,6 +45,14 @@ class CreateAddForeignKeysTable extends Migration
             $table->foreign('user_id')->references('id_user')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
 
+        //TABLA DE OFRECIDOS
+        Schema::table('ofrecidos', function (Blueprint $table) {
+            $table->unsignedBigInteger('cliente_id');
+            $table->foreign('cliente_id')->references('id_cliente')->on('clientes')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('estadoOfrecido_id')->unsigned();
+            $table->foreign('estadoOfrecido_id')->references('id_estadoOfrecido')->on('estados_ofrecidos')
+                    ->onDelete('cascade')->onUpdate('cascade');
+        });
     }
 
     /**
@@ -51,11 +62,16 @@ class CreateAddForeignKeysTable extends Migration
      */
     public function down()
     {   
+        Schema::table('ofrecidos', function (Blueprint $table) {
+            $table->dropForeign(['estadoOfrecido_id']);
+            $table->dropForeign(['cliente_id']);
+        });
         Schema::table('clientes', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
         });
         Schema::table('servicios', function (Blueprint $table) {
             $table->dropForeign(['emp_id']);
+            $table->dropForeign(['tipoServicio_id']);
         });
          Schema::table('emps', function (Blueprint $table) {
             $table->dropForeign('emps_user_id_foreign');
