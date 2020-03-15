@@ -14,7 +14,7 @@ class EstadosUsuariosSeeder extends Seeder
     {
         $estados =  ["activo", "inactivo"];
         foreach ($estados as $estado) {
-             DB::table('estados_usuarios')->insert(['descripcion' => $estado]);
+             DB::table('estados_usuarios')->insert(['eu_descripcion' => $estado]);
         }   
     }
 }

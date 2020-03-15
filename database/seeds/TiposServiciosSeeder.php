@@ -14,7 +14,7 @@ class TiposServiciosSeeder extends Seeder
     {
         $tservicios = ["cortador", "electrico", "herrero"];
         foreach ($tservicios as $tservicio) {
-             DB::table('tipos_servicios')->insert(['descripcion' => $tservicio]);
+             DB::table('tipos_servicios')->insert(['ts_descripcion' => $tservicio]);
         }  
     }
 }

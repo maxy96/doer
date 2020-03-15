@@ -15,12 +15,12 @@ class CreateServiciosTable extends Migration
     {
         Schema::create('tipos_servicios', function (Blueprint $table) {
             $table->increments('id_tipoServicio');
-            $table->string('descripcion', 30);
+            $table->string('ts_descripcion', 50);
         });
 
         Schema::create('servicios', function (Blueprint $table) {
             $table->bigIncrements('id_servicio');
-            $table->mediumText('descripcion');
+            $table->mediumText('s_descripcion');
             $table->dateTime('creado_en');
         });
     }

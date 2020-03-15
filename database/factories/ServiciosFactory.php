@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Servicios::class, function (Faker $faker) {
 	static $emp_id = 1;
     return [
-        'descripcion' => $faker->text,
+        's_descripcion' => $faker->text,
         'creado_en' =>  now(),
         'emp_id' => $emp_id++,
         'tipoServicio_id' => rand(1,3),

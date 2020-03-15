@@ -25,61 +25,27 @@
             <div class="col-lg-10 col-md-9">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-12">
+                        
+                        @forelse($servicios as $servicio)
+                           <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="card border-orange">
-                                <div class="card-header txt-white bg-orange border-orange">Herrero</div>
+                                <div class="card-header txt-white bg-orange border-orange">{{ $servicio->id_servicio }}</div>
                                 <div class="card-body text-bluedark">
-                                    <h5 class="card-title">Nombre de la empresa</h5>
-                                    <p class="card-text">Descripcion
+                                    <h5 class="card-title">{{ $servicio->e_nombre }}</h5>
+                                    <p class="card-text"> {{ $servicio->s_descripcion }}
                                     </p>
                                 </div>
                                 <div class="card-footer bg-transparent border-warning">
-                                    <a class="btn-footer" href="#"><span class="icon-whatsapp"></span></a>
-                                    <a class="btn-footer" href="#"><span class="icon-telegram"></span></a>
-                                    <a class="btn-footer" href="#"><span class="icon-facebook2"></span></a>
-                                    <a class="btn-footer" href="#"><span class="icon-instagram"></span></a>
+                                    <a class="btn-footer" href="#">Ver mas</a>
                                 </div>
                             </div>
                         </div>
                 
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="card border-orange">
-                                <div class="card-header txt-white bg-orange border-orange">Header</div>
-                                <div class="card-body text-bluedark">
-                                    <h5 class="card-title">Success card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                        card's content.
-                                    </p>
-                                </div>
-                                <div class="card-footer bg-transparent border-warning">Footer</div>
-                            </div>
-                        </div>
-                
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="card border-orange">
-                                <div class="card-header txt-white bg-orange border-orange">Header</div>
-                                <div class="card-body text-bluedark">
-                                    <h5 class="card-title">Success card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                        card's content.
-                                    </p>
-                                </div>
-                                <div class="card-footer bg-transparent border-warning">Footer</div>
-                            </div>
-                        </div>
-                
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="card border-orange">
-                                <div class="card-header txt-white bg-orange border-orange">Header</div>
-                                <div class="card-body text-bluedark">
-                                    <h5 class="card-title">Success card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                        card's content.
-                                    </p>
-                                </div>
-                                <div class="card-footer bg-transparent border-warning">Footer</div>
-                            </div>
-                        </div>
+                        @empty
+                            <p>
+                                No hay datos
+                            </p>
+                        @endforelse
                     </div>
                     <!--Paginacion-->
                     <nav aria-label="Page navigation example">

@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('perfiles', function (Blueprint $table) {
             $table->increments('id_perfil');
-            $table->string('descripcion', 20);
+            $table->string('p_descripcion', 20);
         });
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id_user');

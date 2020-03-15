@@ -15,7 +15,7 @@ class CreateOfrecidosTable extends Migration
     {
         Schema::create('ofrecidos', function (Blueprint $table) {
             $table->bigIncrements('id_ofrecido');
-            $table->mediumText('descripcion');
+            $table->mediumText('o_descripcion');
             $table->dateTime('created_at');
         });
     }

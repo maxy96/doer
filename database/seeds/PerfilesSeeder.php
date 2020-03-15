@@ -15,7 +15,7 @@ class PerfilesSeeder extends Seeder
     {
         $perfiles = ["admin", "cliente", "empresa"];
         foreach ($perfiles as $perfil) {
-             DB::table('perfiles')->insert(['descripcion' => $perfil]);
+             DB::table('perfiles')->insert(['p_descripcion' => $perfil]);
         }   
     }
 }
