@@ -40,6 +40,6 @@ class Users extends Authenticatable implements MustVerifyEmail
     ];
     public function perfil()
     {
-        return $this->hasMany(Perfiles::class, 'id_perfil', 'perfil_id')->getResults();
+        return $this->hasMany(Perfiles::class, 'id_perfil', 'perfil_id');
     }
 }

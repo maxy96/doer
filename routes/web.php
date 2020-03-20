@@ -2,7 +2,14 @@
 
 Route::get('/', 'InicioController')->name('inicio');
 
-Route::get('/servicios', 'ServiciosController@index')->name('servicios')->middleware('verified');
+Route::get('servicios', 'ServiciosController@index')->name('servicios');
+Route::get('servicios/nuevo', 'ServiciosController@formServicio')->name('formulario.servicio')->middleware('auth');
+Route::post('nuevoServicio', 'ServiciosController@nuevoServicio')->name('nuevo.servicio');    
+
+
+//Route::get('/servicios', 'ServiciosController@index')->name('servicios')->middleware('verified');
+//Route::get('/nuevoServicio', 'ServiciosController@formServicio')->name('formulario.servicios');
+//Route::post('nuevoServicio', 'ServiciosController@nuevoServicio');
 
 //Route::get()->name('registro');
 

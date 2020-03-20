@@ -34,19 +34,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="/servicios">Servicios</a>
+                            <a class="nav-link" href="{{route('servicios')}}">Servicios</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="#">Ofrecidos</a>
+                            <a class="nav-link" href="/ofrecidos">Ofrecidos</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="#">Empresas</a>
+                            <a class="nav-link" href="/empresas">Empresas</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="#">Emprendedor</a>
+                            <a class="nav-link" href="/emprendedor">Emprendedor</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="#">Comodin</a>
+                            <a class="nav-link" href="/comodin">Comodin</a>
                         </li>
                     </ul>
 
@@ -55,21 +55,21 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="btn btn-dark mx-2 my-1" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="btn btn-dark mx-2 my-1" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="btn btn-warning mx-2 my-1" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="btn btn-warning mx-2 my-1" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->email }} <span class="caret"></span>
+                                    {{ Auth::user()->perfil()->first()->p_descripcion }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Agregar Servicio</a>
+                                    <a class="dropdown-item" href="servicios/nuevo">Agregar Servicio</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
